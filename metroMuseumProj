@@ -1,0 +1,36 @@
+ select *
+ from met
+ limit 10;
+ 
+ select department,count(id)
+ from met
+ group by department like '%american decorative art%';
+ 
+ select count(*)
+ from met
+ where category like '%celery%';
+ 
+ select title, medium, min(date)
+ from met;
+ 
+ select department, country, count(*)
+ from met
+ group by country
+ order by count(*) desc
+ limit 10;
+
+select category, count(*)
+from met
+group by 1
+having count(*) > 100;
+
+select case
+when medium like '%gold%' then 'Gold'
+when medium like '%silver%' then 'Silver'
+else null
+end as 'Bling',
+count(*)
+from met
+where Bling is not null
+group by 1
+order by 2 desc;
