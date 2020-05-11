@@ -1,0 +1,30 @@
+ select *
+ from transactions
+ limit 10;
+
+ select sum(money_in)
+ from transactions;
+
+ select sum(money_out)
+ from transactions;
+
+ select currency, count(money_in)
+ from transactions
+ where currency like '%bit%';
+
+ select max(money_in), max(money_out)
+ from transactions;
+
+ select avg(money_in)
+ from transactions
+ where currency like '%eth%';
+
+ select date, avg(money_in), avg(money_out)
+ from transactions
+ group by 1
+ order by 1 desc;
+
+ select date, round(avg(money_in), 2) as 'average_in', round(avg(money_out), 2) as 'average_out'
+ from transactions
+ group by 1
+ order by 1 desc;
