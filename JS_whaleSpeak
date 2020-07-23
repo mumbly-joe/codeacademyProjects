@@ -1,0 +1,29 @@
+const input = "Hey there. You suck. Why won't you let me study uninterrupted?";
+const vowels = ['a', 'e', 'o', 'i', 'u', 'A', 'E', 'O', 'I', 'U'];
+let resultArray = [];
+let count = 0;
+
+for (let inputIndex = 0; input.length > inputIndex; inputIndex++) {
+  //count++;   // for counting number of letters in string
+  for (let vowel = 0; vowels.length > vowel; vowel++) {
+    if (input[inputIndex] === vowels[vowel]) {
+      if (input[inputIndex] === 'e') {
+        resultArray.push('ee');
+      }
+      else if (input[inputIndex] === 'E') {
+        resultArray.push('EE');
+      }
+      else if (input[inputIndex] === 'u') {
+        resultArray.push('uu');
+      }
+      else if (input[inputIndex] === 'U') {
+        resultArray.push('UU');
+      }
+      else {
+        resultArray.push(input[inputIndex]);
+        }
+      }
+    }
+  }
+// console.log(count);
+console.log(resultArray.join('').toUpperCase());
